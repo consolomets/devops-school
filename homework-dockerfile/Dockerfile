@@ -1,0 +1,11 @@
+# допустим
+from ubuntu:20.04
+run apt update
+run DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y git maven wget default-jdk 
+run git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
+run cd boxfuse-sample-java-war-hello/ && mvn clean package
+workdir "boxfuse-sample-java-war-hello/target"
+run chmod +x hello-1.0.war
+#run git clone https://github.com/jenkinsci/jenkins && cd jenkins/
+expose 8888
+cmd ["java", "-jar" "hello-1.0.war"]
