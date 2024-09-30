@@ -14,5 +14,5 @@ run ln -s /etc/tomcat9/server.xml /usr/share/tomcat9/conf/server.xml
 run ln -s /etc/tomcat9/tomcat-users.xml /usr/share/tomcat9/conf/tomcat-users.xml
 run mkdir -p /usr/share/tomcat9/temp
 #run git clone https://github.com/jenkinsci/jenkins && cd jenkins/
-expose 8888
+expose 8080
 cmd ["/usr/share/tomcat9/bin/catalina.sh", "run"]

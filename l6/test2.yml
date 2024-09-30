@@ -1,0 +1,18 @@
+---
+#Employee records
+- Ivan:
+  name: Ivan
+  job: Developer
+  skills:
+    - python
+    - perl
+    - pascal
+
+-Vasya:
+  name: Vasya
+  job: Developer
+  skills:
+    - lisp
+    - fortran
+    - erlang
+...
