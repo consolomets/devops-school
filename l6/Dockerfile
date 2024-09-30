@@ -3,7 +3,7 @@ run apt update
 run apt install -y 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip
 run pip install -q Flask Jinja2 Werkzeug distribute wsgiref
-mkdir -p /opt/webapp
+run mkdir -p /opt/webapp
 workdir /opt/webapp
 run echo "import os"                                                     >> /opt/webapp/app.py
 run echo                                                                 >> /opt/webapp/app.py
@@ -20,4 +20,4 @@ run echo "    port = int(os.environ.get('PORT', 5000))"                  >> /opt
 run echo "    app.run(host='0.0.0.0', port=port)"                        >> /opt/webapp/app.py
 run chmod +x /opt/webapp/app.py
 expose 5000
-cmd ["python", "run"]
+cmd ["python", "/opt/webapp/app.py"]
