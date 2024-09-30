@@ -8,6 +8,7 @@ run cd boxfuse-sample-java-war-hello/ && mvn clean package
 workdir "boxfuse-sample-java-war-hello/target"
 run chmod +x hello-1.0.war
 run mv hello-1.0.war /var/lib/tomcat9/webapps/
+run ln -s /usr/share/tomcat9/etc/server.xml /usr/share/tomcat9/conf/server.xml
 #run git clone https://github.com/jenkinsci/jenkins && cd jenkins/
 expose 8888
 cmd ["/usr/share/tomcat9/bin/catalina.sh", "run"]
