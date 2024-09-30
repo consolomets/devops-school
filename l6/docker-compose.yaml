@@ -1,5 +1,5 @@
 ---
-version '3'
+version: '3'
 services:
     php:
         build:
@@ -14,7 +14,7 @@ services:
         image: nginx:latest
         ports:
             - '9080:80'
-            - '90443:443'
+            - '9443:443'
         links:
             - 'php'
         volumes:
@@ -28,4 +28,3 @@ services:
             MYSQL_ROOT_PASSWORD: 'secret'
         volumes:
             - ./mysql:/var/lib/mysql
-...
