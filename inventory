@@ -1,0 +1,5 @@
+[all]
+130.193.41.151
+158.160.1.184
+
+#localhost ansible_connection=local
