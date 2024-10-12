@@ -2,6 +2,6 @@
 158.160.31.159 state=First
 
 [virt2]
-158.160.1.184 state=Second
+130.193.43.183 state=Second
 
 #localhost ansible_connection=local

@@ -13,7 +13,7 @@
     - name: Git clone
       git:
         repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-        dest: /tmp/
+        dest: /tmp/boxfuse-sample-java-war-hello
     - name: Build java package
       shell: mvn package
       args: 
@@ -26,4 +26,17 @@
         flat: true
   become: true
 
+- name: Production 
+  hosts: virt2
+  tasks:
+     - name: Ensure Tomcat is installed
+       apt:
+         name: tomcat9
+         state: present
+
+     - name: Copy application to Production server
+       copy:
+         src: ~/wars/*
+         dest: /var/lib/tomcat9/webapps/
+  become: true     
 ...
