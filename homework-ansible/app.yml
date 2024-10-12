@@ -36,7 +36,7 @@
 
      - name: Copy application to Production server
        copy:
-         src: ~/wars/*
+         src: ~/wars/hello-1.0.war
          dest: /var/lib/tomcat9/webapps/
   become: true     
 ...
