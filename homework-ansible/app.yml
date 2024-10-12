@@ -9,7 +9,14 @@
            - maven
            - git
         state: installed
-      
 
+    - name: Git clone
+      git:
+        repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+        dest: /tmp/
+    - name: Build java package
+      shell: mvn package
+      args: 
+        chdir: /tmp/boxfuse-sample-java-war-hello
 
 ...
