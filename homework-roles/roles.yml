@@ -1,0 +1,16 @@
+---
+- name: setup web server
+  hosts: virt1
+  become: yes
+
+  roles:   
+   - webserver
+   - security
+
+- name: build application
+  hosts: virt2
+  become: yes
+
+  roles:
+   - builder
+   - security
