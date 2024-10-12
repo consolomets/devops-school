@@ -5,10 +5,10 @@
     - name: Ensure all packages installed
       apt: 
         name:
-           - opnjdk-11-jdk
+           - openjdk-11-jdk
            - maven
            - git
-        state: installed
+        state: present
 
     - name: Git clone
       git:
@@ -24,6 +24,6 @@
         src: /tmp//boxfuse-sample-java-war-hello/target/hello-1.0.war
         dest: ~/wars/
         flat: true
-
+  become: true
 
 ...
