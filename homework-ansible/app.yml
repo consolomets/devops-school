@@ -18,5 +18,12 @@
       shell: mvn package
       args: 
         chdir: /tmp/boxfuse-sample-java-war-hello
+    
+    - name: Get builded project from virt1
+      fetch: 
+        src: /tmp//boxfuse-sample-java-war-hello/target/hello-1.0.war
+        dest: ~/wars/
+        flat: true
+
 
 ...
