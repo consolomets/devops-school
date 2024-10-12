@@ -6,5 +6,9 @@
 - name: Ensure Apache package is present
   yum: name=httpd state=present
   when: ansible_os_family == "RedHat"
+  notify: Restart Apache
 
-...
+
+  Handlers:
+  - name: Restart Apache
+...  
