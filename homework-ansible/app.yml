@@ -1,0 +1,15 @@
+---
+- name: Building application
+  hosts: virt1
+  tasks:
+    - name: Ensure all packages installed
+      apt: 
+        name:
+           - opnjdk-11-jdk
+           - maven
+           - git
+        state: installed
+      
+
+
+...
