@@ -20,4 +20,4 @@ run mvn package && cp target/*.war /var/lib/tomcat9/webapps/
 
 expose 8080
 #cmd ["/bin/sh"]
-#cmd ["/var/lib/tomcat9/bin/catalina.sh", "run"]
+cmd ["/var/lib/tomcat9/bin/catalina.sh", "run"]
