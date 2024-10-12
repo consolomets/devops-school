@@ -9,15 +9,6 @@ run git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 run cd boxfuse-sample-java-war-hello/ && mvn clean package
 workdir "boxfuse-sample-java-war-hello"
 run mvn package && cp target/*.war /var/lib/tomcat9/webapps/
-#run chmod +x hello-1.0.war
-#run mv hello-1.0.war /var/lib/tomcat9/webapps/
-
-#run mkdir -p /usr/share/tomcat9/conf/
-#run ln -s /etc/tomcat9/server.xml /usr/share/tomcat9/conf/server.xml
-#run ln -s /etc/tomcat9/tomcat-users.xml /usr/share/tomcat9/conf/tomcat-users.xml
-
-#run mkdir -p /usr/share/tomcat9/temp
 
 expose 8080
-#cmd ["/bin/sh"]
 cmd ["/var/lib/tomcat9/bin/catalina.sh", "run"]
