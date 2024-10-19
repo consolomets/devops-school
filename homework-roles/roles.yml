@@ -1,16 +1,25 @@
 ---
-- name: setup web server
+
+- name: build application
   hosts: virt1
+  become: yes
+
+  roles:
+   - builder   
+  tasks:
+    - name: Save WAR file location
+      set_fact:
+        war_file_path: "/tmp/hello-1.0.war"
+
+- name: setup web server
+  hosts: virt2
   become: yes
 
   roles:   
    - webserver
-   - security
-
-- name: build application
-  hosts: virt2
-  become: yes
-
-  roles:
-   - builder
-   - security
+   
+  tasks:
+    - name: Copy WAR file from control node to Tomcat server
+      copy:
+        src: "/tmp/hello-1.0.war"
+        dest: /tmp/hello-1.0.war

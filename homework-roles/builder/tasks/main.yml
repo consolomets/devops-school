@@ -17,11 +17,17 @@
     state: present
 
 - name: Git clone
-    git:
-      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-      dest: /tmp/boxfuse-sample-java-war-hello
-  - name: Build java package
-    shell: mvn package
-    args: 
-      chdir: /tmp/boxfuse-sample-java-war-hello
+  git:
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+    dest: /tmp/boxfuse-sample-java-war-hello
 
+- name: Build java package
+  shell: mvn package
+  args: 
+    chdir: /tmp/boxfuse-sample-java-war-hello
+
+- name: Copy WAR file to local
+  fetch:
+    src: /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war
+    dest: /tmp/hello-1.0.war
+    flat: yes
