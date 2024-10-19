@@ -1,2 +1,27 @@
 ---
 # tasks file for builder
+
+- name: Install Java
+  apt:
+    name: openjdk-11-jdk
+    state: present
+
+- name: Install Maven
+  apt:
+    name: maven
+    state: present
+
+- name: Install Git
+  apt:
+    name: git
+    state: present
+
+- name: Git clone
+    git:
+      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+      dest: /tmp/boxfuse-sample-java-war-hello
+  - name: Build java package
+    shell: mvn package
+    args: 
+      chdir: /tmp/boxfuse-sample-java-war-hello
+

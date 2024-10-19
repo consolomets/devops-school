@@ -1,0 +1,7 @@
+[kuber]
+158.160.27.61 state=First
+
+#[virt2]
+#130.193.43.183 state=Second
+
+#localhost ansible_connection=local

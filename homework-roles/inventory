@@ -1,0 +1,7 @@
+[virt1]
+89.169.163.106 state=First
+
+[virt2]
+89.169.175.34 state=Second
+
+#localhost ansible_connection=local
